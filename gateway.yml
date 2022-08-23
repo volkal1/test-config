@@ -2,5 +2,13 @@ eureka:
    client:
       serviceURL:
          defaultZone: http://localhost:8761/eureka
- server:
-   port: 8080
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: catalog_route
+        uri: lb://catalog-service
+        predicates:
+        - Path=/catalogo/
