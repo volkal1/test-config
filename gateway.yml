@@ -12,3 +12,10 @@ spring:
         uri: lb://catalog-service
         predicates:
         - Path=/catalogo/**
+management:
+  endpoint:
+    gateway:
+      enabled: true
+    web:
+      exposure: 
+        include: [health,gateway]
